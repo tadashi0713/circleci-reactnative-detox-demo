@@ -11,7 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		17974B649C79368DD154D77F /* libPods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C47B4633AA7E0A568F05203E /* libPods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		E33824EFFB28B92C5E175F89 /* libPods-CircleCIReactNativeDetoxDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F2212F0AE7B2856AB7067F /* libPods-CircleCIReactNativeDetoxDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +36,13 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CircleCIReactNativeDetoxDemo/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CircleCIReactNativeDetoxDemo/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CircleCIReactNativeDetoxDemo/main.m; sourceTree = "<group>"; };
+		181D63134990D28FA871710A /* Pods-CircleCIReactNativeDetoxDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleCIReactNativeDetoxDemo.release.xcconfig"; path = "Target Support Files/Pods-CircleCIReactNativeDetoxDemo/Pods-CircleCIReactNativeDetoxDemo.release.xcconfig"; sourceTree = "<group>"; };
+		54F2212F0AE7B2856AB7067F /* libPods-CircleCIReactNativeDetoxDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CircleCIReactNativeDetoxDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F68B1E8F2FF003E3811D8D4 /* Pods-CircleCIReactNativeDetoxDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleCIReactNativeDetoxDemo.debug.xcconfig"; path = "Target Support Files/Pods-CircleCIReactNativeDetoxDemo/Pods-CircleCIReactNativeDetoxDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CircleCIReactNativeDetoxDemo/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0296EF18E8463248E90A2BB /* Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B66A5CF3376C707DAE9C305D /* Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.release.xcconfig"; path = "Target Support Files/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		C47B4633AA7E0A568F05203E /* libPods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17974B649C79368DD154D77F /* libPods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E33824EFFB28B92C5E175F89 /* libPods-CircleCIReactNativeDetoxDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,8 +100,22 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				54F2212F0AE7B2856AB7067F /* libPods-CircleCIReactNativeDetoxDemo.a */,
+				C47B4633AA7E0A568F05203E /* libPods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58829EBABC94EDCF92CFA816 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F68B1E8F2FF003E3811D8D4 /* Pods-CircleCIReactNativeDetoxDemo.debug.xcconfig */,
+				181D63134990D28FA871710A /* Pods-CircleCIReactNativeDetoxDemo.release.xcconfig */,
+				B0296EF18E8463248E90A2BB /* Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.debug.xcconfig */,
+				B66A5CF3376C707DAE9C305D /* Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -109,6 +133,7 @@
 				00E356EF1AD99517003FC87E /* CircleCIReactNativeDetoxDemoTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				58829EBABC94EDCF92CFA816 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -131,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "CircleCIReactNativeDetoxDemoTests" */;
 			buildPhases = (
+				810B43A4AC14AD5D4C2B73B1 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				FF7387E044116B4D71401828 /* [CP] Embed Pods Frameworks */,
+				0F49A2DD3D9F365FDE1A7C17 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,11 +177,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "CircleCIReactNativeDetoxDemo" */;
 			buildPhases = (
+				D9F40C5B92A44251F7C4B2C4 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				ECDF1B17344F4150DDB56FFD /* [CP] Embed Pods Frameworks */,
+				6805578135528CB3C8EE3F58 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,6 +265,101 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
+		0F49A2DD3D9F365FDE1A7C17 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6805578135528CB3C8EE3F58 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CircleCIReactNativeDetoxDemo/Pods-CircleCIReactNativeDetoxDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CircleCIReactNativeDetoxDemo/Pods-CircleCIReactNativeDetoxDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CircleCIReactNativeDetoxDemo/Pods-CircleCIReactNativeDetoxDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		810B43A4AC14AD5D4C2B73B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9F40C5B92A44251F7C4B2C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CircleCIReactNativeDetoxDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECDF1B17344F4150DDB56FFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CircleCIReactNativeDetoxDemo/Pods-CircleCIReactNativeDetoxDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CircleCIReactNativeDetoxDemo/Pods-CircleCIReactNativeDetoxDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CircleCIReactNativeDetoxDemo/Pods-CircleCIReactNativeDetoxDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,6 +377,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FF7387E044116B4D71401828 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests/Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -286,6 +429,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0296EF18E8463248E90A2BB /* Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -312,6 +456,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B66A5CF3376C707DAE9C305D /* Pods-CircleCIReactNativeDetoxDemo-CircleCIReactNativeDetoxDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -335,6 +480,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F68B1E8F2FF003E3811D8D4 /* Pods-CircleCIReactNativeDetoxDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -360,6 +506,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 181D63134990D28FA871710A /* Pods-CircleCIReactNativeDetoxDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -414,6 +561,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -478,6 +626,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
