@@ -9,3 +9,4 @@ workflows:
     jobs:
       - node/test:
           version: '15.1'
+          pkg-manager: yarn
