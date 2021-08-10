@@ -3,10 +3,15 @@ version: 2.1
 
 orbs:
   node: circleci/node@4.1
+  react-native: react-native-community/react-native@5.5.0
 
 workflows:
-  sample:
+  test_and_distribute:
     jobs:
       - node/test:
           version: '15.1'
           pkg-manager: yarn
+      - node/run:
+          version: '15.1'
+          pkg-manager: yarn
+          yarn-run: lint
