@@ -10,13 +10,32 @@ executors:
     macos:
       xcode: 12.5.1
 
+commands:
+  install_gems:
+    parameters:
+      dir:
+        default: .
+        type: string
+    steps:
+      - restore_cache:
+          key: bundle-{{ checksum "<<parameters.dir>>/Gemfile.lock" }}-{{ arch }}
+      - run: 
+          command: bundle install
+          working_directory: <<parameters.dir>>
+      - save_cache:
+          key: bundle-{{ checksum "<<parameters.dir>>/Gemfile.lock" }}-{{ arch }}
+          paths:
+            - <<parameters.dir>>/vendor/bundle
+
 jobs:
   distribute_android:
     executor:
       name: android/android-machine
-      resource-class: xlarge
+      resource-class: large
     steps:
       - checkout
+      - install_gems:
+          dir: android
       - run:
           command: bundle exec fastlane beta
           working_directory: android
