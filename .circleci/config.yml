@@ -34,6 +34,8 @@ jobs:
       resource-class: large
     steps:
       - checkout
+      - node/install-packages:
+        pkg-manager: yarn
       - install_gems:
           dir: android
       - run:
@@ -44,11 +46,9 @@ workflows:
   test_and_distribute:
     jobs:
       - node/test:
-          version: '15.1'
           pkg-manager: yarn
       - node/run:
           name: eslint
-          version: '15.1'
           pkg-manager: yarn
           yarn-run: lint
       - distribute_android
