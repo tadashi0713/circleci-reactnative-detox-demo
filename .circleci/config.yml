@@ -18,12 +18,14 @@ commands:
         type: string
     steps:
       - restore_cache:
-          key: bundle-{{ checksum "<<parameters.dir>>/Gemfile.lock" }}-{{ arch }}
+          keys: 
+            - bundle-{{ arch }}-{{ checksum "<<parameters.dir>>/Gemfile.lock" }}
+            - bundle-{{ arch }}-
       - run: 
           command: bundle install
           working_directory: <<parameters.dir>>
       - save_cache:
-          key: bundle-{{ checksum "<<parameters.dir>>/Gemfile.lock" }}-{{ arch }}
+          key: bundle-{{ arch }}-{{ checksum "<<parameters.dir>>/Gemfile.lock" }}
           paths:
             - <<parameters.dir>>/vendor/bundle
 
