@@ -11,17 +11,18 @@ executors:
     macos:
       xcode: 12.5.1
 
-distribute_android:
-  executor:
-    name: android/android-machine
-    resource-class: xlarge
-  steps:
-    - checkout
-    - ruby/install-deps:
+jobs:
+  distribute_android:
+    executor:
+      name: android/android-machine
+      resource-class: xlarge
+    steps:
+      - checkout
+      - ruby/install-deps:
         working_directory: android
-    - run:
-        command: bundle exec fastlane beta
-        working_directory: android
+      - run:
+          command: bundle exec fastlane beta
+          working_directory: android
 
 workflows:
   test_and_distribute:
