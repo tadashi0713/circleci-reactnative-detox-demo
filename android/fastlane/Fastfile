@@ -18,6 +18,12 @@ default_platform(:android)
 platform :android do
   desc "Submit a new Beta Build to Firebase"
   lane :beta do
-    gradle(task: "assembleDebug")
+    gradle(task: "assembleRelease")
+    firebase_app_distribution(
+      app: "1:217734547318:android:2008dd3a68f90b48a69c57",
+      testers: "tadashi.nemoto0713@gmail.com",
+      apk_path: "app/build/outputs/apk/release/app-release.apk",
+      firebase_cli_token: ENV["FIREBASE_TOKEN"]
+    )
   end
 end
