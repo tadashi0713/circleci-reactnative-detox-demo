@@ -29,6 +29,20 @@ commands:
           paths:
             - <<parameters.dir>>/vendor/bundle
 
+  install_pods:
+    steps:
+      - restore_cache:
+          keys: 
+            - pods-{{ checksum "ios/Podfile.lock" }}
+            - pods-
+      - run: 
+          command: pod install
+          working_directory: ios
+      - save_cache:
+          key: pods-{{ checksum "ios/Podfile.lock" }}
+          paths:
+            - ios/Pods
+
 jobs:
   distribute_android:
     executor:
@@ -40,12 +54,10 @@ jobs:
       - install_gems:
           dir: android
       - android/restore-gradle-cache
-      - android/restore-build-cache
       - run:
           command: bundle exec fastlane beta
           working_directory: android
       - android/save-gradle-cache
-      - android/save-build-cache
 
   distribute_ios:
     executor: mac
@@ -54,6 +66,7 @@ jobs:
       - node/install-packages
       - install_gems:
           dir: ios
+      - install_pods
       - run:
           command: bundle exec fastlane beta
           working_directory: ios
