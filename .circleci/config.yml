@@ -39,9 +39,13 @@ jobs:
       - node/install-packages
       - install_gems:
           dir: android
+      - android/restore-gradle-cache
+      - android/restore-build-cache
       - run:
           command: bundle exec fastlane beta
           working_directory: android
+      - android/save-gradle-cache
+      - android/save-build-cache
 
 workflows:
   test_and_distribute:
