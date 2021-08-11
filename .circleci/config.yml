@@ -5,6 +5,11 @@ orbs:
   node: circleci/node@4.7.0
   react-native: react-native-community/react-native@5.5.0
 
+executors:
+  mac:
+    macos:
+      xcode: 12.5.1
+
 workflows:
   test_and_distribute:
     jobs:
@@ -12,6 +17,7 @@ workflows:
           version: '15.1'
           pkg-manager: yarn
       - node/run:
+          name: eslint
           version: '15.1'
           pkg-manager: yarn
           yarn-run: lint
