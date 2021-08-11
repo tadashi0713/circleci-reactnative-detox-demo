@@ -47,6 +47,17 @@ jobs:
       - android/save-gradle-cache
       - android/save-build-cache
 
+  distribute_ios:
+    executor: mac
+    steps:
+      - checkout
+      - node/install-packages
+      - install_gems:
+          dir: ios
+      - run:
+          command: bundle exec fastlane beta
+          working_directory: ios
+
 workflows:
   test_and_distribute:
     jobs:
@@ -55,3 +66,4 @@ workflows:
           name: eslint
           npm-run: lint
       - distribute_android
+      - distribute_ios
