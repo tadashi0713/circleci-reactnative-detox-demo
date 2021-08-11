@@ -16,11 +16,11 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## iOS
-### ios beta
+### ios app
 ```
-fastlane ios beta
+fastlane ios app
 ```
-Submit a new Beta Build to Firebase
+Build .app
 
 ----
 

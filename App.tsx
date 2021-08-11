@@ -19,7 +19,7 @@ const App: React.FC<Props> = ({name, baseEnthusiasmLevel = 0}) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.greeting}>
+      <Text style={styles.greeting} testID="hello_text">
         Hello {name}
         {getExclamationMarks(enthusiasmLevel)}
       </Text>
@@ -29,12 +29,14 @@ const App: React.FC<Props> = ({name, baseEnthusiasmLevel = 0}) => {
           accessibilityLabel="increment"
           onPress={onIncrement}
           color="blue"
+          testID="increase_button"
         />
         <Button
           title="Decrease enthusiasm"
           accessibilityLabel="decrement"
           onPress={onDecrement}
           color="red"
+          testID="decrease_button"
         />
       </View>
     </View>

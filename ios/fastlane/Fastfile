@@ -16,14 +16,16 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Submit a new Beta Build to Firebase"
-  lane :beta do
+  desc "Build .app"
+  lane :app do
     build_app(
       scheme: "CircleCIReactNativeDetoxDemo",
       workspace: "CircleCIReactNativeDetoxDemo.xcworkspace",
+      derived_data_path: "./AppDirPath",
       silent: true,
       skip_archive: true,
-      skip_codesigning: true
+      skip_package_ipa: true,
+      destination: "generic/platform=iOS Simulator"
     )
   end
 end

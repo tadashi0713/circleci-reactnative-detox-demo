@@ -1,4 +1,3 @@
-# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
 version: 2.1
 
 orbs:
@@ -59,7 +58,7 @@ jobs:
           working_directory: android
       - android/save-gradle-cache
 
-  distribute_ios:
+  detox_ios:
     executor: mac
     steps:
       - checkout
@@ -68,7 +67,7 @@ jobs:
           dir: ios
       - install_pods
       - run:
-          command: bundle exec fastlane beta
+          command: bundle exec fastlane app
           working_directory: ios
 
 workflows:
@@ -80,4 +79,4 @@ workflows:
           name: eslint
           npm-run: lint
       - distribute_android
-      - distribute_ios
+      - detox_ios

@@ -16,11 +16,16 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## Android
+### android apk
+```
+fastlane android apk
+```
+Build
 ### android beta
 ```
 fastlane android beta
 ```
-Submit a new Beta Build to Firebase
+Submit to Firebase
 
 ----
 
