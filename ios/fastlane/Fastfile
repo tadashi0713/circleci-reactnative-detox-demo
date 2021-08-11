@@ -23,8 +23,7 @@ platform :ios do
       workspace: "CircleCIReactNativeDetoxDemo.xcworkspace",
       silent: true,
       skip_archive: true,
-      skip_codesigning: true,
-      suppress_xcode_output: true
+      skip_codesigning: true
     )
   end
 end
