@@ -28,6 +28,8 @@ build/
 .gradle
 local.properties
 *.iml
+android/app/src/main/assets/*
+android/app/src/main/res/raw/
 
 # node.js
 #
@@ -60,3 +62,5 @@ buck-out/
 /ios/Pods/
 
 ios/AppDirPath/
+
+!.gitkeep
