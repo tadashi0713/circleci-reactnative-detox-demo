@@ -43,7 +43,34 @@ commands:
             - ios/Pods
 
 jobs:
-  distribute_android:
+  detox_ios:
+    executor: mac
+    steps:
+      - checkout
+      - node/install-packages
+      - install_gems:
+          dir: ios
+      - install_pods
+      - run:
+          command: bundle exec fastlane build_debug_app
+          working_directory: ios
+
+  detox_android:
+    executor:
+      name: android/android-machine
+      resource-class: large
+    steps:
+      - checkout
+      - node/install-packages
+      - install_gems:
+          dir: android
+      - android/restore-gradle-cache
+      - run:
+          command: bundle exec fastlane build_debug_app
+          working_directory: android
+      - android/save-gradle-cache
+
+  beta_android:
     executor:
       name: android/android-machine
       resource-class: large
@@ -58,18 +85,6 @@ jobs:
           working_directory: android
       - android/save-gradle-cache
 
-  detox_ios:
-    executor: mac
-    steps:
-      - checkout
-      - node/install-packages
-      - install_gems:
-          dir: ios
-      - install_pods
-      - run:
-          command: bundle exec fastlane app
-          working_directory: ios
-
 workflows:
   test_and_distribute:
     jobs:
@@ -78,5 +93,6 @@ workflows:
       - node/run:
           name: eslint
           npm-run: lint
-      - distribute_android
       - detox_ios
+      - detox_android
+      - beta_android

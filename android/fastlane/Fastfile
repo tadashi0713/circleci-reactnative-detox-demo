@@ -17,12 +17,13 @@ default_platform(:android)
 
 platform :android do
   desc "Build"
-  lane :apk do
-    gradle(task: "assembleRelease")
+  lane :build_debug_app do
+    gradle(task: "assembleDebug")
   end
 
   desc "Submit to Firebase"
   lane :beta do
+    gradle(task: "assembleRelease")
     firebase_app_distribution(
       app: "1:217734547318:android:2008dd3a68f90b48a69c57",
       testers: "tadashi.nemoto0713@gmail.com",
