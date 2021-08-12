@@ -52,8 +52,16 @@ jobs:
           dir: ios
       - install_pods
       - run:
+          name: pre-start simulator
+          command: | 
+            xcrun instruments -w "iPhone 12 (14.5) [" || true
+            npm install -g detox
+      - run:
           command: bundle exec fastlane build_debug_app
           working_directory: ios
+      - run:
+          name: detox
+          command: detox test --configuration ios
 
   detox_android:
     executor:
