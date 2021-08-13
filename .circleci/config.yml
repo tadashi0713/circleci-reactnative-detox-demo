@@ -70,12 +70,13 @@ jobs:
     steps:
       - checkout
       - node/install-packages
-      - install_gems:
-          dir: android
       - android/restore-gradle-cache
       - run:
-          command: bundle exec fastlane build_debug_app
-          working_directory: android
+          name: Run detox
+          command: |
+            npm install -g detox
+            detox test --configuration android
+            detox test --configuration android
       - android/save-gradle-cache
 
   beta_android:
