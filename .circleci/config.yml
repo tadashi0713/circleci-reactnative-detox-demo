@@ -70,6 +70,12 @@ jobs:
       name: android/android-machine
       resource-class: large
     steps:
+      - android/create-avd:
+          avd-name: Pixel_3a_API_30_x86
+          install: true
+          system-image: system-images;android-29;default;x86
+      - android/start-emulator:
+          avd-name: Pixel_3a_API_30_x86
       - checkout
       - node/install-packages
       - android/restore-gradle-cache
