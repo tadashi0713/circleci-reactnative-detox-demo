@@ -63,7 +63,9 @@ jobs:
           working_directory: ios
       - run:
           name: detox
-          command: detox test --configuration ios
+          command: detox test --configuration ios --take-screenshots all
+      - store_artifacts:
+          path: artifacts
 
   detox_android:
     executor:
@@ -102,7 +104,9 @@ jobs:
       - run:
           name: Run detox
           command: |
-            detox test --configuration android
+            detox test --configuration android --take-screenshots all
+      - store_artifacts:
+          path: artifacts
 
   beta_android:
     executor:

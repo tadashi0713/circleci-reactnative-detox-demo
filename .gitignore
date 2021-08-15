@@ -60,7 +60,9 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
-
 ios/AppDirPath/
+
+# artifacts
+artifacts/
 
 !.gitkeep
