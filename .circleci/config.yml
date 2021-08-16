@@ -77,6 +77,7 @@ jobs:
       resource-class: large
     steps:
       - checkout
+      - node/install-yarn
       - rn/yarn_install
       - install_gems:
           dir: android
@@ -95,7 +96,7 @@ workflows:
           version: 12.22.5
       - node/run:
           name: eslint
-          npm-run: lint
+          yarn-run: lint
           pkg-manager: yarn
           version: 12.22.5
       - detox_ios
