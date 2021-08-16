@@ -23,10 +23,10 @@
     "@types/jest": "^27.0.1",
     "@types/react-native": "^0.64.5",
     "@types/react-test-renderer": "^16.9.2",
-    "babel-jest": "^27.0.6",
+    "babel-jest": "27.0.6",
     "eslint": "^7.14.0",
     "eslint-plugin-detox": "^1.0.0",
-    "jest": "^27.0.6",
+    "jest": "27.0.6",
     "metro-react-native-babel-preset": "^0.64.0",
     "react-test-renderer": "17.0.2",
     "typescript": "^3.8.3"
