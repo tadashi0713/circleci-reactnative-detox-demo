@@ -5,11 +5,6 @@ orbs:
   android: circleci/android@1.0.3
   rn: react-native-community/react-native@5.5.0
 
-executors:
-  mac:
-    macos:
-      xcode: 12.5.1
-
 commands:
   install_gems:
     parameters:
@@ -31,7 +26,9 @@ commands:
 
 jobs:
   detox_ios:
-    executor: mac
+    executor:
+      name: rn/macos
+      xcode_version: 12.5.1
     steps:
       - checkout
       - rn/setup_macos_executor
@@ -44,8 +41,9 @@ jobs:
           command: | 
             xcrun instruments -w "iPhone 12 (14.5) [" || true
       - rn/ios_build:
-          project_path: CircleCIReactNativeDetoxDemo.xcodeproj
-          scheme: CircleCIReactNativeDetoxDemo.xcworkspace
+          project_path: CircleCIReactNativeDetoxDemo.xcworkspace
+          scheme: CircleCIReactNativeDetoxDemo
+          project_type: workspace
       - run:
           name: detox
           command: detox test --configuration ios --take-screenshots all
