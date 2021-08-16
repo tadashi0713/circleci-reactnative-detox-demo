@@ -2,6 +2,8 @@
 
 [![CircleCI](https://circleci.com/gh/tadashi0713/circleci-reactnative-detox-demo/tree/master.svg?style=svg&circle-token=0a2eabdc379cc76972bb8563447d98a031826d38)](https://circleci.com/gh/tadashi0713/circleci-reactnative-detox-demo/tree/master)
 
+<img src="./docs/ios.png"> <img src="./docs/android.png">
+
 Demo for CI/CD pipeline for React Native + Detox app using CircleCI.
 * [React Native](https://reactnative.dev/)
 * [Detox](https://github.com/wix/Detox)
