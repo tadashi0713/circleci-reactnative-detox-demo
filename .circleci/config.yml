@@ -97,5 +97,17 @@ workflows:
           pkg-manager: yarn
           version: 12.22.5
       - detox_ios
+          filters:
+            branches:
+              only:
+                - master
       - detox_android
+          filters:
+            branches:
+              only:
+                - master
       - beta_android
+          filters:
+            branches:
+              only:
+                - master
