@@ -92,10 +92,12 @@ workflows:
       - node/test:
           name: unit-test
           pkg-manager: yarn
+          version: 12.22.5
       - node/run:
           name: eslint
           npm-run: lint
           pkg-manager: yarn
+          version: 12.22.5
       - detox_ios
       - detox_android
       - beta_android
