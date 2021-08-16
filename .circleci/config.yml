@@ -43,7 +43,7 @@ jobs:
           name: pre-start simulator
           command: | 
             xcrun instruments -w "iPhone 12 (14.5) [" || true
-      - rn/ios_build
+      - rn/ios_build:
           project_path: CircleCIReactNativeDetoxDemo.xcodeproj
           scheme: CircleCIReactNativeDetoxDemo.xcworkspace
       - run:
