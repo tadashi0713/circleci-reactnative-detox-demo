@@ -58,13 +58,9 @@ jobs:
       - checkout
       - node/install-yarn
       - rn/yarn_install
-      - rn/android_emulator_start:
-          device_name: Pixel_3a_API_30_x86
-      - run:
-          name: Run detox
-          command: |
-            npm install -g detox-cli react-native-cli
-            detox build --configuration android
+      # - rn/android_emulator_start:
+      #     device_name: Pixel_3a_API_30_x86
+      - rn/android_build
       - run:
           name: Run detox
           command: |
