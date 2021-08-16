@@ -26,6 +26,8 @@ commands:
 
 jobs:
   detox_ios:
+    environment:
+      CACHE_VERSION: mac
     executor:
       name: rn/macos
       xcode_version: 12.5.1
