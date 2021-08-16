@@ -52,23 +52,13 @@ jobs:
 
   detox_android:
     executor:
-      name: android/android-machine
+      name: rn/linux_android
       resource-class: large
     steps:
       - checkout
       - rn/yarn_install
-      - run:
-          name: Create AVD
-          command: |
-            SYSTEM_IMAGES="system-images;android-29;default;x86"
-            DEVICE="pixel_3a"
-            sdkmanager "$SYSTEM_IMAGES"
-            echo "no" | avdmanager --verbose create avd -n Pixel_3a_API_30_x86 -k "$SYSTEM_IMAGES" -d "$DEVICE"
-      - run:
-          name: Boot emulator
-          command: |
-            emulator -avd Pixel_3a_API_30_x86 -delay-adb -verbose -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim
-          background: true
+      - rn/android_emulator_start:
+          device_name: Pixel_3a_API_30_x86
       - run:
           name: Run detox
           command: |
