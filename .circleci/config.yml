@@ -32,8 +32,7 @@ jobs:
     steps:
       - checkout
       - rn/setup_macos_executor
-      - rn/yarn_install:
-          cache: false
+      - rn/yarn_install
       - rn/pod_install
       - run:
           name: pre-start simulator
@@ -44,16 +43,17 @@ jobs:
           scheme: CircleCIReactNativeDetoxDemo
           project_type: workspace
           device: iPhone 12
-      - run:
-          name: detox
-          command: detox test --configuration ios --take-screenshots all
+      - rn/detox_test:
+          configuration: ios
+          environments:
+            DETOX_TAKE_SCREENSHOTS: all
       - store_artifacts:
           path: artifacts
 
   detox_android:
     executor:
-      name: rn/linux_android
-      resource_class: large
+      name: android/android-machine
+      resource-class: large
     steps:
       - checkout
       - node/install-yarn
