@@ -45,8 +45,6 @@ jobs:
           device: iPhone 12
       - rn/detox_test:
           configuration: ios
-          environments:
-            DETOX_TAKE_SCREENSHOTS: all
       - store_artifacts:
           path: artifacts
 
