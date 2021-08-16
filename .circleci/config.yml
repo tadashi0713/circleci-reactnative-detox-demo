@@ -55,6 +55,7 @@ jobs:
       resource_class: large
     steps:
       - checkout
+      - node/install-yarn
       - rn/yarn_install
       - rn/android_emulator_start:
           device_name: Pixel_3a_API_30_x86
