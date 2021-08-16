@@ -3,6 +3,7 @@ version: 2.1
 orbs:
   node: circleci/node@4.7.0
   android: circleci/android@1.0.3
+  react-native: react-native-community/react-native@5.5.0
 
 executors:
   mac:
@@ -28,20 +29,6 @@ commands:
           paths:
             - <<parameters.dir>>/vendor/bundle
 
-  install_pods:
-    steps:
-      - restore_cache:
-          keys: 
-            - pods-{{ checksum "ios/Podfile.lock" }}
-            - pods-
-      - run: 
-          command: pod install
-          working_directory: ios
-      - save_cache:
-          key: pods-{{ checksum "ios/Podfile.lock" }}
-          paths:
-            - ios/Pods
-
 jobs:
   detox_ios:
     executor: mac
@@ -50,7 +37,7 @@ jobs:
       - node/install-packages
       - install_gems:
           dir: ios
-      - install_pods
+      - react-native/pod_install
       - run:
           name: pre-start simulator
           command: | 
