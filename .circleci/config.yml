@@ -26,8 +26,6 @@ commands:
 
 jobs:
   detox_ios:
-    environment:
-      CACHE_VERSION: mac
     executor:
       name: rn/macos
       xcode_version: 12.5.1
@@ -58,13 +56,15 @@ jobs:
       - checkout
       - node/install-yarn
       - rn/yarn_install
-      # - rn/android_emulator_start:
-      #     device_name: Pixel_3a_API_30_x86
+      - rn/android_emulator_start:
+          device_name: Pixel_3a_API_30_x86
       - rn/android_build
       - run:
           name: Run detox
           command: |
-            detox test --configuration android --take-screenshots all
+            yarn add -g detox-cli
+      - rn/detox_test:
+          configuration: android
       - store_artifacts:
           path: artifacts
 
