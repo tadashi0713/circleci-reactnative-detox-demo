@@ -53,7 +53,7 @@ jobs:
   detox_android:
     executor:
       name: rn/linux_android
-      resource-class: large
+      resource_class: large
     steps:
       - checkout
       - rn/yarn_install
