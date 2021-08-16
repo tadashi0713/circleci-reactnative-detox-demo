@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   node: circleci/node@4.7.0
   android: circleci/android@1.0.3
-  react-native: react-native-community/react-native@5.5.0
+  rn: react-native-community/react-native@5.5.0
 
 executors:
   mac:
@@ -34,18 +34,18 @@ jobs:
     executor: mac
     steps:
       - checkout
-      - react-native/setup_macos_executor
+      - rn/setup_macos_executor
       - node/install-packages
       - install_gems:
           dir: ios
-      - react-native/pod_install
+      - rn/pod_install
       - run:
           name: pre-start simulator
           command: | 
             xcrun instruments -w "iPhone 12 (14.5) [" || true
-      - run:
-          command: bundle exec fastlane build_debug_app
-          working_directory: ios
+      - rn/ios_build
+          project_path: CircleCIReactNativeDetoxDemo.xcodeproj
+          scheme: CircleCIReactNativeDetoxDemo.xcworkspace
       - run:
           name: detox
           command: detox test --configuration ios --take-screenshots all
