@@ -34,6 +34,7 @@ jobs:
     executor: mac
     steps:
       - checkout
+      - react-native/setup_macos_executor
       - node/install-packages
       - install_gems:
           dir: ios
@@ -42,9 +43,6 @@ jobs:
           name: pre-start simulator
           command: | 
             xcrun instruments -w "iPhone 12 (14.5) [" || true
-            npm install -g detox-cli react-native-cli
-            brew tap wix/brew
-            brew install applesimutils
       - run:
           command: bundle exec fastlane build_debug_app
           working_directory: ios
