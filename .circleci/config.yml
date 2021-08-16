@@ -96,17 +96,17 @@ workflows:
           yarn-run: lint
           pkg-manager: yarn
           version: 12.22.5
-      - detox_ios
+      - detox_ios:
           filters:
             branches:
               only:
                 - master
-      - detox_android
+      - detox_android:
           filters:
             branches:
               only:
                 - master
-      - beta_android
+      - beta_android:
           filters:
             branches:
               only:
