@@ -32,7 +32,7 @@ jobs:
     steps:
       - checkout
       - rn/setup_macos_executor
-      - node/install-packages
+      - rn/yarn_install
       - install_gems:
           dir: ios
       - rn/pod_install
@@ -41,7 +41,7 @@ jobs:
           command: | 
             xcrun instruments -w "iPhone 12 (14.5) [" || true
       - rn/ios_build:
-          project_path: CircleCIReactNativeDetoxDemo.xcworkspace
+          project_path: ios/CircleCIReactNativeDetoxDemo.xcworkspace
           scheme: CircleCIReactNativeDetoxDemo
           project_type: workspace
       - run:
@@ -56,7 +56,7 @@ jobs:
       resource-class: large
     steps:
       - checkout
-      - node/install-packages
+      - rn/yarn_install
       - run:
           name: Create AVD
           command: |
@@ -97,7 +97,7 @@ jobs:
       resource-class: large
     steps:
       - checkout
-      - node/install-packages
+      - rn/yarn_install
       - install_gems:
           dir: android
       - android/restore-gradle-cache
@@ -111,9 +111,11 @@ workflows:
     jobs:
       - node/test:
           name: unit-test
+          pkg-manager: yarn
       - node/run:
           name: eslint
           npm-run: lint
+          pkg-manager: yarn
       - detox_ios
       - detox_android
       - beta_android
