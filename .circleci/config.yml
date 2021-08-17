@@ -35,7 +35,7 @@ jobs:
       - rn/yarn_install:
           cache_folder: ~/.cache/yarn
       - rn/pod_install
-      - ios_simulator_start:
+      - rn/ios_simulator_start:
           device: iPhone 12
       - rn/ios_build:
           project_path: ios/CircleCIReactNativeDetoxDemo.xcworkspace
