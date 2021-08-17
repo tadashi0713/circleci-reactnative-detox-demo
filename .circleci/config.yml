@@ -35,7 +35,6 @@ jobs:
       - rn/yarn_install:
           cache_folder: ~/.cache/yarn
       - rn/pod_install
-      - rn/bundle
       - rn/ios_simulator_start:
           device: iPhone 12
       - rn/ios_build:
