@@ -35,13 +35,8 @@ jobs:
       - rn/yarn_install:
           cache_folder: ~/.cache/yarn
       - rn/pod_install
-      # - install_gems:
-      #     dir: ios
       - rn/ios_simulator_start:
           device: iPhone 12
-      # - run:
-      #     command: bundle exec fastlane build_debug_app
-      #     working_directory: ios
       - run:
           name: Run detox
           command: |
@@ -59,6 +54,7 @@ jobs:
       - checkout
       - node/install-yarn
       - rn/yarn_install
+      - android/restore-gradle-cache
       - rn/android_emulator_start:
           device_name: Pixel_3a_API_30_x86
       - run:
@@ -67,6 +63,7 @@ jobs:
             npm install -g detox-cli react-native-cli
             detox build --configuration android
             detox test --configuration android --take-screenshots all
+      - android/save-gradle-cache
       - store_artifacts:
           path: artifacts
 
