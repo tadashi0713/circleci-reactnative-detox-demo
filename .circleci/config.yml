@@ -45,7 +45,7 @@ jobs:
       - run:
           name: Run detox
           command: |
-            yarn global add detox-cli
+            npm install -g detox-cli react-native-cli
             detox test --configuration ios --take-screenshots all
       - store_artifacts:
           path: artifacts
@@ -64,7 +64,7 @@ jobs:
       - run:
           name: Run detox
           command: |
-            yarn global add detox-cli
+            npm install -g detox-cli react-native-cli
             detox test --configuration ios --take-screenshots all
       - store_artifacts:
           path: artifacts
