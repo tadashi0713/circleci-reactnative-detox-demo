@@ -62,7 +62,7 @@ jobs:
       - run:
           name: Run detox
           command: |
-            yarn add -g detox-cli
+            yarn add --global detox-cli
       - rn/detox_test:
           configuration: android
       - store_artifacts:
