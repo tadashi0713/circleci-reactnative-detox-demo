@@ -35,17 +35,18 @@ jobs:
       - rn/yarn_install:
           cache_folder: ~/.cache/yarn
       - rn/pod_install
-      - install_gems:
-          dir: ios
+      # - install_gems:
+      #     dir: ios
       - rn/ios_simulator_start:
           device: iPhone 12
-      - run:
-          command: bundle exec fastlane build_debug_app
-          working_directory: ios
+      # - run:
+      #     command: bundle exec fastlane build_debug_app
+      #     working_directory: ios
       - run:
           name: Run detox
           command: |
             npm install -g detox-cli react-native-cli
+            detox build --configuration ios
             detox test --configuration ios --take-screenshots all
       - store_artifacts:
           path: artifacts

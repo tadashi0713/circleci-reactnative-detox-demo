@@ -5,7 +5,8 @@
   "apps": {
     "ios": {
       "type": "ios.app",
-      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/CircleCIReactNativeDetoxDemo.app"
+      "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/CircleCIReactNativeDetoxDemo.app",
+      "build": "xcodebuild -workspace ios/CircleCIReactNativeDetoxDemo.xcworkspace -scheme CircleCIReactNativeDetoxDemo -configuration Release -sdk iphonesimulator -derivedDataPath ios/build"
     },
     "android": {
       "type": "android.apk",
