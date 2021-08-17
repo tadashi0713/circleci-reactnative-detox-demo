@@ -35,17 +35,18 @@ jobs:
       - rn/yarn_install:
           cache_folder: ~/.cache/yarn
       - rn/pod_install
-      - run:
-          name: pre-start simulator
-          command: | 
-            xcrun instruments -w "iPhone 12 (14.5) [" || true
+      - ios_simulator_start:
+          device: iPhone 12
       - rn/ios_build:
           project_path: ios/CircleCIReactNativeDetoxDemo.xcworkspace
           scheme: CircleCIReactNativeDetoxDemo
           project_type: workspace
           device: iPhone 12
-      - rn/detox_test:
-          configuration: ios
+      - run:
+          name: Run detox
+          command: |
+            yarn global add detox-cli
+            detox test --configuration ios --take-screenshots all
       - store_artifacts:
           path: artifacts
 
@@ -64,8 +65,7 @@ jobs:
           name: Run detox
           command: |
             yarn global add detox-cli
-      - rn/detox_test:
-          configuration: android
+            detox test --configuration ios --take-screenshots all
       - store_artifacts:
           path: artifacts
 
