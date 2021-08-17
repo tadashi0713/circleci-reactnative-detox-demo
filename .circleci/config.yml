@@ -32,7 +32,8 @@ jobs:
     steps:
       - checkout
       - rn/setup_macos_executor
-      - rn/yarn_install
+      - rn/yarn_install:
+          cache_folder: ~/.cache/yarn
       - rn/pod_install
       - run:
           name: pre-start simulator
