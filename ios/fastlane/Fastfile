@@ -21,7 +21,7 @@ platform :ios do
     build_app(
       scheme: "CircleCIReactNativeDetoxDemo",
       workspace: "CircleCIReactNativeDetoxDemo.xcworkspace",
-      derived_data_path: "./AppDirPath",
+      derived_data_path: "./build",
       silent: true,
       skip_archive: true,
       skip_package_ipa: true,
