@@ -35,6 +35,7 @@ jobs:
       - rn/yarn_install:
           cache_folder: ~/.cache/yarn
       - rn/pod_install
+      - rn/bundle
       - rn/ios_simulator_start:
           device: iPhone 12
       - rn/ios_build:
@@ -65,7 +66,7 @@ jobs:
           name: Run detox
           command: |
             npm install -g detox-cli react-native-cli
-            detox test --configuration ios --take-screenshots all
+            detox test --configuration android --take-screenshots all
       - store_artifacts:
           path: artifacts
 
