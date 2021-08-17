@@ -24,6 +24,27 @@ commands:
           paths:
             - <<parameters.dir>>/vendor/bundle
 
+  detox_build_ios:
+    steps:
+      - restore_cache:
+          keys: 
+            - ios-build-cache-{{ arch }}-{{ checksum "~/.tmp/checksumfiles/package.json" }}
+      - run: |
+          npm install -g detox-cli react-native-cli
+          detox build --configuration ios
+      - save_cache:
+          key: ios-build-cache-{{ arch }}-{{ checksum "~/.tmp/checksumfiles/package.json" }}
+          paths:
+            - ios/build/Build
+
+  detox_build_android:
+    steps:
+      - android/restore-gradle-cache
+      - run: |
+          npm install -g detox-cli react-native-cli
+          detox build --configuration android
+      - android/save-gradle-cache
+
 jobs:
   detox_ios:
     executor:
@@ -37,12 +58,8 @@ jobs:
       - rn/pod_install
       - rn/ios_simulator_start:
           device: iPhone 12
-      - run:
-          name: Run detox
-          command: |
-            npm install -g detox-cli react-native-cli
-            detox build --configuration ios
-            detox test --configuration ios --take-screenshots all
+      - detox_build_ios
+      - run: detox test --configuration ios --take-screenshots all
       - store_artifacts:
           path: artifacts
 
@@ -54,16 +71,10 @@ jobs:
       - checkout
       - node/install-yarn
       - rn/yarn_install
-      - android/restore-gradle-cache
       - rn/android_emulator_start:
           device_name: Pixel_3a_API_30_x86
-      - run:
-          name: Run detox
-          command: |
-            npm install -g detox-cli react-native-cli
-            detox build --configuration android
-            detox test --configuration android --take-screenshots all
-      - android/save-gradle-cache
+      - detox_build_android
+      - run: detox test --configuration android --take-screenshots all
       - store_artifacts:
           path: artifacts
 
