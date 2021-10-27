@@ -95,4 +95,3 @@ workflows:
       - detox_android
       - beta_android
       - rn/android_build
-      - rn/ios_build
