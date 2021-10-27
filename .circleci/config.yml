@@ -94,4 +94,5 @@ workflows:
       - detox_ios
       - detox_android
       - beta_android
-      - rn/android_build
+      - rn/android_build:
+          checkout: true
