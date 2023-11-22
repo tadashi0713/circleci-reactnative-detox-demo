@@ -22,7 +22,7 @@
     "@react-native-community/eslint-config": "3.0.0",
     "@types/jest": "27.0.2",
     "@types/react-native": "0.66.4",
-    "@types/react-test-renderer": "17.0.1",
+    "@types/react-test-renderer": "17.0.9",
     "babel-jest": "27.3.1",
     "eslint": "7.32.0",
     "eslint-plugin-detox": "1.0.0",
